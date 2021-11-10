@@ -49,5 +49,56 @@ no label, UUID=697bc014-160c-463c-ad62-9c9500d29170
 | 0| specifies the option to be used by the dump progra|
 |0| specifies the fsck command option|
 
+#### To verify if the swap space has been created successfully
+```
+[root@ip-172-31-42-41 /]# swapon -s
+Filename                                Type            Size    Used    Priority
+/swapfile                               file            2097148 0       -2
+
+[root@ip-172-31-42-41 /]# free -mh
+              total        used        free      shared  buff/cache   available
+Mem:           982M         76M         65M        456K        840M        760M
+Swap:          2.0G          0B        2.0G
+
+[root@ip-172-31-42-41 /]# cat /proc/swaps 
+Filename                                Type            Size    Used    Priority
+/swapfile                               file            2097148 0       -2
+```
+#### Swappiness is a Linux kernel property that defines how often the system will use the swap space. Swappiness can have a value between 0 and 100. A low value will make the kernel to try to avoid swapping whenever possible, while a higher value will make the kernel to use the swap space more aggressively. The default value is 60
+
+```
+[root@ip-172-31-42-41 /]# cat /proc/sys/vm/swappiness 
+60
+```
+#### To Change swapiness value "
+
+```
+[root@ip-172-31-42-41 /]# sysctl vm.swappiness=10
+vm.swappiness = 10
+
+Also add the entry to /etc/sysctl.conf file
+```
+
+#### To verift if the changes has been correctly executed :
+
+```
+[root@ip-172-31-42-41 /]# cat /proc/sys/vm/swappiness 
+10
+```
+
+#### To Disable / Delete the sawp space 
+
+```
+[root@ip-172-31-42-41 /]# swapoff -v /swapfile
+swapoff /swapfile
+
+Remove the swap file entry /swapfile swap swap defaults 0 0 from the /etc/fstab file.
+
+Finally, delete the actual swapfile file using 
+
+rm /swapfile
+```
+
+
 
 
