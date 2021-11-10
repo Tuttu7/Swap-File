@@ -1,6 +1,6 @@
 #### Swap space/partition is space on a disk created for use by the operating system when memory has been fully utilized. It can be used as virtual memory for the system; it can either be a partition or a file on a disk.
 
-#### we will create a swap file of size 2GB using the dd command as follows. Note that bs=1024 means read and write up to 1024 bytes at a time and count = (1024 x 2048)MB size of the file.
+#### We will create a swap file of size 2GB using the dd command as follows. Note that bs=1024 means read and write up to 1024 bytes at a time and count = (1024 x 2048)MB size of the file.
 
 ```
 [root@ip-172-31-42-41 /]# touch swapfile
