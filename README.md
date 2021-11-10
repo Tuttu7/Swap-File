@@ -70,7 +70,7 @@ Filename                                Type            Size    Used    Priority
 [root@ip-172-31-42-41 /]# cat /proc/sys/vm/swappiness 
 60
 ```
-#### To Change swapiness value 
+#### To change swapiness value 
 
 ```
 [root@ip-172-31-42-41 /]# sysctl vm.swappiness=10
@@ -79,7 +79,7 @@ vm.swappiness = 10
 Also add the entry to /etc/sysctl.conf file
 ```
 
-#### To verift if the changes has been correctly executed :
+#### To verify if the changes has been correctly executed :
 
 ```
 [root@ip-172-31-42-41 /]# cat /proc/sys/vm/swappiness 
