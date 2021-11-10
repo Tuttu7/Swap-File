@@ -70,7 +70,7 @@ Filename                                Type            Size    Used    Priority
 [root@ip-172-31-42-41 /]# cat /proc/sys/vm/swappiness 
 60
 ```
-#### To Change swapiness value "
+#### To Change swapiness value 
 
 ```
 [root@ip-172-31-42-41 /]# sysctl vm.swappiness=10
